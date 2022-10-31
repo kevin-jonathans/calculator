@@ -11,34 +11,50 @@
 
 <body>
 
+    <header><h1>Calculator</h1></header>
+
     <div id="calculator">
         <div id="screen">
-            <h2 class="secondary-screen">Test</h2>
-            <h1 class="main-screen">Test</h1>
+            <h3 class="secondary-screen">-</h2>
+            <h1 class="main-screen"></h1>
         </div>
-        <div id="number">
-            <button class="btn">&#x232b</button>
-            <button class="btn">.</button>
-            <button class="btn">0</button>
-            <button class="btn">1</button>
-            <button class="btn">2</button>
-            <button class="btn">3</button>
-            <button class="btn">4</button>
-            <button class="btn">5</button>
-            <button class="btn">6</button>
-            <button class="btn">7</button>
-            <button class="btn">8</button>
-            <button class="btn">9</button>
+
+        <div class="calculator-button">
+            <div class="row">
+                <button class="btn">%</button>
+                <button class="btn">POW</button>
+                <button class="btn" id="erase">&#x232b</button>
+                <button class="btn">AC</button>
+            </div>
+            <div class="row">
+                <button class="btn" value="7">7</button>
+                <button class="btn" value="8">8</button>
+                <button class="btn" value="9">9</button> 
+                <button class="btn">/</button>
+            </div>
+            <div class="row">
+                <button class="btn" value="4">4</button>
+                <button class="btn" value="5">5</button>
+                <button class="btn" value="6">6</button>
+                <button class="btn">x</button>
+            </div>
+            <div class="row">
+                <button class="btn" value="1">1</button>
+                <button class="btn" value="2">2</button>
+                <button class="btn" value="3">3</button>
+                <button class="btn">-</button>
+            </div>
+            <div class="row">
+                <button class="btn" value="0">0</button>
+                <button class="btn" value=".">.</button>
+                <button class="btn">=</button>
+                <button class="btn">+</button>
+            </div>
         </div>
-        <div id="operator">
-            <button class="btn">=</button>
-            <button class="btn">+</button>
-            <button class="btn">-</button>
-            <button class="btn">x</button>
-            <button class="btn">/</button>
-            <button class="btn">AC</button>
-        </div>
+
     </div>
+
+    <footer>The Odin Project</footer>
 
     <script src="./calculator.js" defer></script>
 </body>
