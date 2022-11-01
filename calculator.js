@@ -41,7 +41,7 @@ for (const op of operator) {
 
 function writeOperator(event) {
     // console.log(event.target.value);
-    if (currentNumber  === "") return;  
+    // if (currentNumber  === "") return;  
     if (previousNumber === undefined) {
         previousNumber = currentNumber;
     }
@@ -71,4 +71,21 @@ function resetScreen() {
     result = undefined;
     updateSecondaryScreen();
     updateMainScreen();
+}
+
+const backspace = document.querySelector(".btn.erase");
+backspace.addEventListener("click", erase);
+
+function erase() {
+    currentNumber = currentNumber.slice(0, (currentNumber.length - 1));
+    updateMainScreen(currentNumber);
+}
+
+const dot = document.querySelector(".btn.dot");
+dot.addEventListener("click", writePoint);
+
+function writePoint() {
+    if (/[.]/.test(currentNumber)) return;
+    currentNumber += ".";
+    updateMainScreen(currentNumber);
 }
