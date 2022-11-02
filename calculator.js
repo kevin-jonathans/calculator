@@ -61,6 +61,7 @@ function calculateNumber() {
         return;
     }
     result = calculate[activeOperator](previousNumber, mainScreen.textContent);
+    result = Math.round((result + Number.EPSILON) * 100000000) / 100000000;
     updateSecondaryScreen(`${previousNumber} ${activeOperator} ${mainScreen.textContent}`);
     updateMainScreen(result);
     previousNumber = undefined;
