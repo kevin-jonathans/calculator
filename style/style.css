@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@500&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,6 +7,7 @@
 }
 
 body {
+    font-family: 'Roboto', sans-serif;
     min-height: 100vh;
     background-color: #EEEEEE;
     display: flex;
@@ -29,9 +32,12 @@ footer {
     padding: 30px;
     display: flex;
     flex-direction: column;
+    border: 3px solid #181818;
+    box-shadow: 10px 5px 5px slategrey;
 }
 
 #screen {
+    font-family: 'Orbitron', sans-serif;
     background-color: #9e9e9e;
     display: flex;
     flex-direction: column;
@@ -40,7 +46,8 @@ footer {
     padding: 10px;
     margin: 10px;
     border-radius: 3px;
-    min-height: 80px;
+    min-height: 100px;
+    border: 2px solid #181818;
 }
 
 .calculator-button {
@@ -53,6 +60,13 @@ footer {
     user-select: none;
 }
 
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
 .btn {
     font-size: 20px;
     font-weight: 900;
@@ -60,4 +74,18 @@ footer {
     aspect-ratio: 1;
     background-color: #E9E5DD;
     border-radius: 20px;
+    border: 2px solid #181818;
+}
+
+.btn:hover {
+    background-color: #b9b9b9;
+}
+
+.btn:active {
+	position:relative;
+	top:1px;
+}
+
+.backspace {
+    width: 40px;
 }
