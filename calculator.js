@@ -41,7 +41,7 @@ for (const op of operator) {
 function writeOperator(event) {
     // console.log(event.target.value);
     if (!(mainScreen.textContent === "") && previousNumber && activeOperator) {
-        calculateNumber()
+        calculateNumber();
     }
 
     if (mainScreen.textContent === "") return;
@@ -59,7 +59,7 @@ function calculateNumber() {
         updateMainScreen("ERROR");
         setTimeout(resetScreen, 1000);
         return;
-    };
+    }
     result = calculate[activeOperator](previousNumber, mainScreen.textContent);
     updateSecondaryScreen(`${previousNumber} ${activeOperator} ${mainScreen.textContent}`);
     updateMainScreen(result);
