@@ -44,7 +44,11 @@ function writeOperator(event) {
         calculateNumber();
     }
 
-    if (mainScreen.textContent === "") return;
+    if (mainScreen.textContent === "") {
+        activeOperator = event.target.value;
+        updateSecondaryScreen(`${previousNumber} ${activeOperator}`);
+        return;
+    }
     previousNumber = mainScreen.textContent;
     activeOperator = event.target.value;
     updateSecondaryScreen(`${previousNumber} ${activeOperator}`);
@@ -61,7 +65,7 @@ function calculateNumber() {
         return;
     }
     result = calculate[activeOperator](previousNumber, mainScreen.textContent);
-    result = Math.round((result + Number.EPSILON) * 100000000) / 100000000;
+    result = (Math.round((result + Number.EPSILON) * 100000000) / 100000000).toString();
     updateSecondaryScreen(`${previousNumber} ${activeOperator} ${mainScreen.textContent}`);
     updateMainScreen(result);
     previousNumber = undefined;
@@ -92,4 +96,15 @@ dot.addEventListener("click", writePoint);
 function writePoint() {
     if (/[.]/.test(mainScreen.textContent)) return;
     updateMainScreen(mainScreen.textContent + ".");
+}
+
+const positiveNegative = document.querySelector(".btn.positive-negative");
+positiveNegative.addEventListener("click", writePositiveNegative);
+
+function writePositiveNegative() {
+    if (/[-]/.test(mainScreen.textContent)) {
+        updateMainScreen(mainScreen.textContent.replace("-", ""));
+    } else {
+        updateMainScreen("-" + mainScreen.textContent);
+    }
 }
