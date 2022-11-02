@@ -44,9 +44,9 @@ function writeOperator(event) {
         calculateNumber()
     }
 
+    if (mainScreen.textContent === "") return;
     previousNumber = mainScreen.textContent;
     activeOperator = event.target.value;
-    
     updateSecondaryScreen(`${previousNumber} ${activeOperator}`);
     updateMainScreen("");
 }
