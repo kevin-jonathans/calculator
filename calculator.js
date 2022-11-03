@@ -22,6 +22,20 @@ function updateSecondaryScreen(text) {
 const mainScreen = document.querySelector(".main-screen");
 const secondaryScreen = document.querySelector(".secondary-screen");
 
+window.addEventListener("keyup", (e) => {
+    if (e.key >= 0 && e.key <= 9) writeNumber(e.key);
+    if (e.key === ".") writePoint();
+    if (e.key === "+") writeOperator(e.key);
+    if (e.key === "-") writeOperator(e.key);
+    if (e.key === "*") writeOperator(e.key);
+    if (e.key === "/") writeOperator(e.key);
+    if (e.key === "^") writeOperator(e.key);
+    if (e.key === "%") writeOperator(e.key);
+    if (e.key === "=") calculateNumber();
+    if (e.key === "Backspace") erase();
+    if (e.key === "Escape") resetScreen();
+})
+
 const number = document.querySelectorAll(".btn.number");
 for (const num of number) {
     num.addEventListener("click", (event) => writeNumber(event.target.value));
