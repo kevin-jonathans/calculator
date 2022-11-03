@@ -3,12 +3,12 @@ let activeOperator;
 let result;
 
 const calculate = {
-    "+": (a,b) => Number(a) + Number(b),
-    "-": (a,b) => Number(a) - Number(b),
-    "*": (a,b) => Number(a) * Number(b),
-    "/": (a,b) => Number(a) / Number(b),
-    "^": (a,b) => Number(a) ** Number(b),
-    "%": (a,b) => Number(a) % Number(b),
+    "+": (a,b) => Number(a) + Number(b),  // add
+    "-": (a,b) => Number(a) - Number(b),  // subtract
+    "*": (a,b) => Number(a) * Number(b),  // multiply
+    "/": (a,b) => Number(a) / Number(b),  // divide
+    "^": (a,b) => Number(a) ** Number(b),  // power/exponent
+    "%": (a,b) => Number(a) % Number(b),  // modulo
 };
 
 function updateMainScreen(text) {
@@ -45,7 +45,7 @@ function writeOperator(event) {
     }
 
     if (mainScreen.textContent === "") {
-        activeOperator = event.target.value;
+        activeOperator = event.target.value;  // For change operator
         updateSecondaryScreen(`${previousNumber} ${activeOperator}`);
         return;
     }
@@ -65,7 +65,7 @@ function calculateNumber() {
         return;
     }
     result = calculate[activeOperator](previousNumber, mainScreen.textContent);
-    result = (Math.round((result + Number.EPSILON) * 100000000) / 100000000).toString();
+    result = (Math.round((result + Number.EPSILON) * 100000000) / 100000000).toString();  //round 8 digit and change type into string
     updateSecondaryScreen(`${previousNumber} ${activeOperator} ${mainScreen.textContent}`);
     updateMainScreen(result);
     previousNumber = undefined;
@@ -87,6 +87,7 @@ const backspace = document.querySelector(".btn.erase");
 backspace.addEventListener("click", erase);
 
 function erase() {
+    // Delete last char in string
     updateMainScreen(mainScreen.textContent.slice(0, (mainScreen.textContent.length - 1)));
 }
 
@@ -94,6 +95,8 @@ const dot = document.querySelector(".btn.dot");
 dot.addEventListener("click", writePoint);
 
 function writePoint() {
+    // Check if textContent contain "." with Regex
+    // return true or false
     if (/[.]/.test(mainScreen.textContent)) return;
     updateMainScreen(mainScreen.textContent + ".");
 }
@@ -102,6 +105,8 @@ const positiveNegative = document.querySelector(".btn.positive-negative");
 positiveNegative.addEventListener("click", writePositiveNegative);
 
 function writePositiveNegative() {
+    // Check if textContent contain "-" with Regex
+    // return true or false
     if (/[-]/.test(mainScreen.textContent)) {
         updateMainScreen(mainScreen.textContent.replace("-", ""));
     } else {
