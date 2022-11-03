@@ -9,7 +9,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     min-height: 100vh;
-    background-color: #EEEEEE;
+    background-color: #d4d4d4;
     display: flex;
     flex-direction: column;
 }
@@ -17,7 +17,7 @@ body {
 header,
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 30px;
 }
 
 footer {
@@ -27,13 +27,13 @@ footer {
 #calculator {
     margin: 0 auto;
     width: 400px;
-    background-color: slategrey;
+    background-color: #674747;
     border-radius: 10px;
-    padding: 30px;
+    padding: 15px 15px 30px 15px;
     display: flex;
     flex-direction: column;
     border: 3px solid #181818;
-    box-shadow: 10px 5px 5px slategrey;
+    box-shadow: 10px 5px 5px #674747;
 }
 
 #screen {
@@ -67,18 +67,26 @@ footer {
     gap: 5px;
 }
 
+.row:nth-child(1) .btn {
+    flex-grow: 1;
+    aspect-ratio: 0;
+    width: 150px;
+    height: 70px;
+}
+
 .btn {
+    font-family: 'Orbitron', sans-serif;
     font-size: 20px;
     font-weight: 900;
-    width: 70px;
+    width: 75px;
     aspect-ratio: 1;
-    background-color: #E9E5DD;
+    background-color: #e9e5ddb6;
     border-radius: 20px;
     border: 2px solid #181818;
 }
 
 .btn:hover {
-    background-color: #b9b9b9;
+    background-color: #ac82829f;
 }
 
 .btn:active {
@@ -88,4 +96,12 @@ footer {
 
 .backspace {
     width: 40px;
+}
+
+.erase {
+    background-color: #f96666cc;
+}
+
+.clear {
+    background-color: #829460;
 }
