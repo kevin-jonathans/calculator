@@ -29,8 +29,7 @@ for (const num of number) {
 
 function writeNumber(event) {
     // console.log(event.target.value);
-    const temp = mainScreen.textContent + event.target.value;
-    updateMainScreen(temp);
+    updateMainScreen(mainScreen.textContent + event.target.value);
 }
 
 const operator = document.querySelectorAll(".btn.operator");
