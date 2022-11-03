@@ -24,32 +24,32 @@ const secondaryScreen = document.querySelector(".secondary-screen");
 
 const number = document.querySelectorAll(".btn.number");
 for (const num of number) {
-    num.addEventListener("click", writeNumber);
+    num.addEventListener("click", (event) => writeNumber(event.target.value));
 }
 
-function writeNumber(event) {
+function writeNumber(value) {
     // console.log(event.target.value);
-    updateMainScreen(mainScreen.textContent + event.target.value);
+    updateMainScreen(mainScreen.textContent + value);
 }
 
 const operator = document.querySelectorAll(".btn.operator");
 for (const op of operator) {
-    op.addEventListener("click", writeOperator);
+    op.addEventListener("click", (event) => writeOperator(event.target.value));
 }
 
-function writeOperator(event) {
+function writeOperator(value) {
     // console.log(event.target.value);
     if (!(mainScreen.textContent === "") && previousNumber && activeOperator) {
         calculateNumber();
     }
 
     if (mainScreen.textContent === "") {
-        activeOperator = event.target.value;  // For change operator only
+        activeOperator = value;  // For change operator only
         updateSecondaryScreen(`${previousNumber} ${activeOperator}`);
         return;
     }
     previousNumber = mainScreen.textContent;
-    activeOperator = event.target.value;
+    activeOperator = value;
     updateSecondaryScreen(`${previousNumber} ${activeOperator}`);
     updateMainScreen("");  // reset mainScreen
 }
