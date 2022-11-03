@@ -14,13 +14,9 @@ body {
     flex-direction: column;
 }
 
-header,
 footer {
     text-align: center;
     padding: 30px;
-}
-
-footer {
     margin-top: auto;
 }
 
@@ -68,7 +64,6 @@ footer {
 }
 
 .row:nth-child(1) .btn {
-    flex-grow: 1;
     aspect-ratio: 0;
     width: 150px;
     height: 70px;
