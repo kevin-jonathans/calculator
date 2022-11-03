@@ -59,6 +59,7 @@ function writeOperator(value) {
     }
 
     if (mainScreen.textContent === "") {
+        if (!previousNumber) return;
         activeOperator = value;  // For change operator only
         updateSecondaryScreen(`${previousNumber} ${activeOperator}`);
         return;
