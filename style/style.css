@@ -21,7 +21,7 @@ footer {
 }
 
 #calculator {
-    margin: 0 auto;
+    margin: 30px auto 0;
     width: 400px;
     background-color: #674747;
     border-radius: 10px;
