@@ -44,14 +44,14 @@ function writeOperator(event) {
     }
 
     if (mainScreen.textContent === "") {
-        activeOperator = event.target.value;  // For change operator
+        activeOperator = event.target.value;  // For change operator only
         updateSecondaryScreen(`${previousNumber} ${activeOperator}`);
         return;
     }
     previousNumber = mainScreen.textContent;
     activeOperator = event.target.value;
     updateSecondaryScreen(`${previousNumber} ${activeOperator}`);
-    updateMainScreen("");
+    updateMainScreen("");  // reset mainScreen
 }
 
 const equal = document.querySelector(".btn.result");
