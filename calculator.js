@@ -35,7 +35,9 @@ window.addEventListener("keyup", (e) => {
     if (e.key === "=") calculateNumber();
     if (e.key === "Backspace") erase();
     if (e.key === "Escape") resetScreen();
-})
+});
+
+window.addEventListener("keydown", (e) => {if (e.key === "/") e.preventDefault()});
 
 const number = document.querySelectorAll(".btn.number");
 for (const num of number) {
