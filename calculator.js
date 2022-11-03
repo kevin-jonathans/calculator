@@ -22,6 +22,7 @@ function updateSecondaryScreen(text) {
 const mainScreen = document.querySelector(".main-screen");
 const secondaryScreen = document.querySelector(".secondary-screen");
 
+// Add event for key press
 window.addEventListener("keyup", (e) => {
     if (e.key >= 0 && e.key <= 9) writeNumber(e.key);
     if (e.key === ".") writePoint();
