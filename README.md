@@ -1,2 +1,2 @@
 # calculator
-Calculator to see my html, css &amp; js skill 
+Calculator to test my html, css &amp; js skill 
