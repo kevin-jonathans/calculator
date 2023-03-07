@@ -19,8 +19,8 @@ function updateSecondaryScreen(text) {
     secondaryScreen.textContent = text;
 }
 
-const mainScreen = document.querySelector(".main-screen");
-const secondaryScreen = document.querySelector(".secondary-screen");
+const mainScreen = document.querySelector(".screen-main");
+const secondaryScreen = document.querySelector(".screen-secondary");
 
 // Add event for key press
 window.addEventListener("keyup", (e) => {
